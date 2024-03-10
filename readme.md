@@ -22,16 +22,16 @@ This project was made during class an is actually not relevant.
 ***This project was tested on QEMU, check the directory /test_q to check it out***
 This project consists in the following:
 
-1. Given a delay struct the following functions need to be implemented:
+1. Given a delay struct the following functions need to be implemented :white_check_mark::
     - delayInit
     - delayRead
     - delayWrite
 
 **Check the file on ***practica_2/Src/main.c*** to see the docs for every function.**
 
-2.  After implementing the functions, make a program that uses non-blocking delays and makes blink an LED of the board.
+2.  After implementing the functions, make a program that uses  non-blocking delays and makes blink an LED of the board. :white_check_mark:
 
-3. [Optional] Implement on the same project a program that makes and LED blink in a periodic way and with 50% work cycle with the following:
+3. [Optional] Implement on the same project a program that makes and LED blink in a periodic way and with 50% work cycle with the following :watch: :
 - 5 times at 1s.
 - 5 times at 200ms.
 - 5 times at 100ms. 
