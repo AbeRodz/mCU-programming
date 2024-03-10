@@ -2,7 +2,8 @@
 *.d
 
 .vscode
-./practicas
+/practicas
+/local
 # Object files
 *.o
 *.ko
