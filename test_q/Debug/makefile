@@ -35,34 +35,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := practica_2_emulador
+BUILD_ARTIFACT_NAME := test_q
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-practica_2_emulador.elf \
+test_q.elf \
 
 MAP_FILES += \
-practica_2_emulador.map \
+test_q.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-practica_2_emulador.list \
+test_q.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: practica_2_emulador.elf secondary-outputs
+main-build: test_q.elf secondary-outputs
 
 # Tool invocations
-practica_2_emulador.elf practica_2_emulador.map: $(OBJS) $(USER_OBJS) /home/rodz/Documents/uba/mCU-programming/test_q/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "practica_2_emulador.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/rodz/Documents/uba/mCU-programming/test_q/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="practica_2_emulador.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+test_q.elf test_q.map: $(OBJS) $(USER_OBJS) /home/rodz/Documents/uba/mCU-programming/test_q/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "test_q.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/rodz/Documents/uba/mCU-programming/test_q/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test_q.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -71,14 +71,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-practica_2_emulador.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "practica_2_emulador.list"
+test_q.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "test_q.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout practica_2_emulador.elf practica_2_emulador.list practica_2_emulador.map
+	-$(RM) default.size.stdout test_q.elf test_q.list test_q.map
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

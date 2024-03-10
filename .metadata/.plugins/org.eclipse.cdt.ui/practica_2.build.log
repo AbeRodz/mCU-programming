@@ -1,10 +1,32 @@
-21:23:25 **** Incremental Build of configuration Debug for project practica_2 ****
+22:27:06 **** Build of configuration Debug for project practica_2 ****
 make -j20 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/rodz/Documents/uba/mCU-programming/practica_2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/rodz/Documents/uba/mCU-programming/practica_2/Drivers/CMSIS/Include" -I"/home/rodz/Documents/uba/mCU-programming/practica_2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/rodz/Documents/uba/mCU-programming/practica_2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/rodz/Documents/uba/mCU-programming/practica_2/Drivers/Core/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Inc/stm32f4xx_hal_conf.h:269,
+                 from /home/rodz/Documents/uba/mCU-programming/practica_2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Inc/main.h:26,
+                 from ../Src/main.c:22:
+../Src/main.c: In function 'main':
+/home/rodz/Documents/uba/mCU-programming/practica_2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:98:36: warning: conversion from 'short unsigned int' to 'Led_TypeDef' changes value from '4096' to '0' [-Woverflow]
+   98 | #define GPIO_PIN_12                ((uint16_t)0x1000)  /* Pin 12 selected   */
+      |                                    ^~~~~~~~~~~~~~~~~~
+../Src/main.c:131:16: note: in expansion of macro 'GPIO_PIN_12'
+  131 |   BSP_LED_Init(GPIO_PIN_12);
+      |                ^~~~~~~~~~~
+../Src/main.c: In function 'delayRead':
+../Src/main.c:92:1: warning: control reaches end of non-void function [-Wreturn-type]
+   92 | }
+      | ^
+arm-none-eabi-gcc -o "practica_2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/rodz/Documents/uba/mCU-programming/practica_2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="practica_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: practica_2.elf
+ 
 arm-none-eabi-size  practica_2.elf 
+arm-none-eabi-objdump -h -S practica_2.elf  > "practica_2.list"
    text	   data	    bss	    dec	    hex	filename
-   6212	     32	   1584	   7828	   1e94	practica_2.elf
+   6312	     32	   1584	   7928	   1ef8	practica_2.elf
 Finished building: default.size.stdout
  
+Finished building: practica_2.list
+ 
 
-21:23:25 Build Finished. 0 errors, 0 warnings. (took 176ms)
+22:27:06 Build Finished. 0 errors, 2 warnings. (took 327ms)
 

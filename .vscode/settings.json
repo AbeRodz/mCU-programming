@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "in.h": "c"
+        "in.h": "c",
+        "stm32f4xx_hal.h": "c"
     },
     "cmake.configureOnOpen": true
 }

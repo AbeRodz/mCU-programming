@@ -1,7 +1,6 @@
-../Src/main.c:76:6:delayInit	2
-../Src/main.c:92:8:delayRead	4
-../Src/main.c:116:6:delayWrite	2
-../Src/main.c:126:5:main	2
-../Src/main.c:178:6:SystemClock_Config	3
-../Src/main.c:220:13:MX_GPIO_Init	1
-../Src/main.c:251:6:Error_Handler	1
+../Src/main.c:61:6:delayInit	2
+../Src/main.c:77:8:delayRead	4
+../Src/main.c:101:6:delayWrite	2
+../Src/main.c:114:5:main	2
+../Src/main.c:169:13:SystemClock_Config	4
+../Src/main.c:221:13:Error_Handler	1

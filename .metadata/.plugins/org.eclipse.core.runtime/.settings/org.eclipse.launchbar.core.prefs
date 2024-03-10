@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ej2_uart,org.eclipse.launchbar.core.descriptorType.default\:qmu Debug,org.eclipse.launchbar.core.descriptorType.default\:qmu Debug (1),org.eclipse.launchbar.core.descriptorType.default\:Ej0_blinky Debug,org.eclipse.launchbar.core.descriptorType.default\:practica_2_emulador Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ej2_uart,org.eclipse.launchbar.core.descriptorType.default\:qmu Debug,org.eclipse.launchbar.core.descriptorType.default\:qmu Debug (1),org.eclipse.launchbar.core.descriptorType.default\:Ej0_blinky Debug,org.eclipse.launchbar.core.descriptorType.default\:practica_2_emulador Debug,org.eclipse.launchbar.core.descriptorType.default\:practica_2 Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ej0_blinky/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ej0_blinky/activeLaunchTarget=null\:---
