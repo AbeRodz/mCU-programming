@@ -20,6 +20,7 @@ This project was made during class an is actually not relevant.
 
 ### Project 2 (tested with QEMU)
 ***This project was tested on QEMU, check the directory /test_q to check it out***
+Check the video [here](/assets/Screencast%20from%2009-03-24%2022:38:48.webm) 
 This project consists in the following:
 
 1. Given a delay struct the following functions need to be implemented :white_check_mark::

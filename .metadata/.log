@@ -4177,3 +4177,36 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-03-09 22:10:15.867
 !MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.embedcdt.debug.core 4 1 2024-03-09 22:27:01.672
+!MESSAGE Extension point org.eclipse.embedcdt.debug.core.cprojectExtra has no extensions
+
+!ENTRY org.eclipse.embedcdt.debug.core 4 1 2024-03-09 22:27:07.851
+!MESSAGE /home/rodz/.local/xPacks/@xpack-dev-tools/qemu-arm/7.2.5-1.1/.content/bin/qemu-system-gnuarmeclipse --verbose --board STM32F4-Discovery --mcu STM32F407VGTx --gdb tcp::1234 -d unimp,guest_errors --semihosting-config enable=on,target=native --semihosting-cmdline practica_2
+
+!ENTRY org.eclipse.embedcdt.debug.core 4 1 2024-03-09 22:27:08.010
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-09 22:29:33.258
+!MESSAGE Indexed 'emulator_practica_2' (3 sources, 53 headers) in 0.282 sec: 1,950 declarations; 2,832 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-09 22:36:17.080
+!MESSAGE Indexed 'test_q' (21 sources, 144 headers) in 1.73 sec: 12,320 declarations; 40,924 references; 1 unresolved inclusions; 76 syntax errors; 240 unresolved names (0.45%)
+
+!ENTRY org.eclipse.embedcdt.debug.core 4 1 2024-03-09 22:38:01.231
+!MESSAGE /home/rodz/.local/xPacks/@xpack-dev-tools/qemu-arm/7.2.5-1.1/.content/bin/qemu-system-gnuarmeclipse --verbose --board STM32F4-Discovery --mcu STM32F407VGTx --gdb tcp::1234 -d unimp,guest_errors --semihosting-config enable=on,target=native --semihosting-cmdline practica_2
+
+!ENTRY org.eclipse.embedcdt.debug.core 4 1 2024-03-09 22:38:01.394
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY org.eclipse.embedcdt.debug.core 4 1 2024-03-09 22:38:58.064
+!MESSAGE /home/rodz/.local/xPacks/@xpack-dev-tools/qemu-arm/7.2.5-1.1/.content/bin/qemu-system-gnuarmeclipse --verbose --board STM32F4-Discovery --mcu STM32F407VGTx --gdb tcp::1234 -d unimp,guest_errors --semihosting-config enable=on,target=native --semihosting-cmdline practica_2
+
+!ENTRY org.eclipse.embedcdt.debug.core 4 1 2024-03-09 22:38:58.225
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY org.eclipse.embedcdt.debug.core 4 1 2024-03-09 22:39:17.978
+!MESSAGE /home/rodz/.local/xPacks/@xpack-dev-tools/qemu-arm/7.2.5-1.1/.content/bin/qemu-system-gnuarmeclipse --verbose --board STM32F4-Discovery --mcu STM32F407VGTx --gdb tcp::1234 -d unimp,guest_errors --semihosting-config enable=on,target=native --semihosting-cmdline practica_2
+
+!ENTRY org.eclipse.embedcdt.debug.core 4 1 2024-03-09 22:39:18.143
+!MESSAGE arm-none-eabi-gdb --interpreter=mi2 --nx
