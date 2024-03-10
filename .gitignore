@@ -1,6 +1,8 @@
 # Prerequisites
 *.d
 
+.vscode
+./practicas
 # Object files
 *.o
 *.ko
@@ -20,13 +22,7 @@
 *.lib
 *.a
 *.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+*.l
 
 # Executables
 *.exe
