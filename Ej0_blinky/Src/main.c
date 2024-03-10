@@ -67,12 +67,14 @@ int main(void)
 
   /* Initialize BSP Led for LED2 */
   BSP_LED_Init(LED2);
+  BSP_LED_Init(12);
 
   /* Infinite loop */
   while (1)
-  {
-	  BSP_LED_Toggle(LED2);
+  {	  printf("printing..");
+	  BSP_LED_On(12);
 	  HAL_Delay(100);
+	  BSP_LED_Off(12);
   }
 }
 
