@@ -1,0 +1,26 @@
+19:19:53 **** Incremental Build of configuration Debug for project sim_practica_3 ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rodz/Documents/uba/mCU-programming/sim_practica_3/Drivers/API/Inc" -I"/home/rodz/Documents/uba/mCU-programming/sim_practica_3/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rodz/Documents/uba/mCU-programming/sim_practica_3/Drivers/API/Inc" -I"/home/rodz/Documents/uba/mCU-programming/sim_practica_3/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rodz/Documents/uba/mCU-programming/sim_practica_3/Drivers/API/Inc" -I"/home/rodz/Documents/uba/mCU-programming/sim_practica_3/Drivers/API/Src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:103:9: warning: implicit declaration of function 'periodicBlinkInit' [-Wimplicit-function-declaration]
+  103 |         periodicBlinkInit(delayArray,cycles,arrayLength);
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:108:17: warning: implicit declaration of function 'periodicBlink' [-Wimplicit-function-declaration]
+  108 |                 periodicBlink(delayArray,cycles,arrayLength,count);
+      |                 ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "sim_practica_3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/rodz/Documents/uba/mCU-programming/sim_practica_3/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="sim_practica_3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: sim_practica_3.elf
+ 
+arm-none-eabi-size  sim_practica_3.elf 
+arm-none-eabi-objdump -h -S sim_practica_3.elf  > "sim_practica_3.list"
+   text	   data	    bss	    dec	    hex	filename
+   7204	     72	   1568	   8844	   228c	sim_practica_3.elf
+Finished building: default.size.stdout
+ 
+Finished building: sim_practica_3.list
+ 
+
+19:19:53 Build Finished. 0 errors, 2 warnings. (took 267ms)
+
