@@ -19,14 +19,13 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include <stdio.h>
-#include "API_delay.h"
 /* Private includes ----------------------------------------------------------*/
 
 delay_t delay_a;
 duty_cycle cycles[3] = {
-        {200, 0.5, GPIO_PIN_13,5},
-        {200, 0.5, GPIO_PIN_14,5},
-        {200, 0.5, GPIO_PIN_15,1}
+        {500, 0.5, LED1,5},
+        {200, 0.5, LED2,5},
+        {200, 0.5, LED3,1}
     };
 size_t arrayLength = sizeof(cycles) / sizeof(cycles[0]);
 
@@ -90,6 +89,7 @@ int main(void)
 	/* USER CODE END SysInit */
 
 	/* Initialize all configured peripherals */
+
 	MX_GPIO_Init();
 	/* USER CODE BEGIN 2 */
 

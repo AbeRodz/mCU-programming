@@ -28,7 +28,7 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
-
+#include "stm32f4xx_nucleo_144.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -72,7 +72,11 @@ typedef struct{
 
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
-
+void delayInit( delay_t * delay, tick_t duration );
+bool_t delayRead( delay_t * delay );
+void delayWrite( delay_t * delay, tick_t duration );
+void periodicBlinkInit(delay_t *delays,duty_cycle * duties, size_t numLed);
+void periodicBlink(delay_t *delays,duty_cycle * duties, size_t numLed, uint32_t counter);
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */
