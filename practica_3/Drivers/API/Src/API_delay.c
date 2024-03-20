@@ -12,12 +12,6 @@
 #define DEFAULT_DELAY 100 // default delay constant in milliseconds
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-void delayInit( delay_t * delay, tick_t duration );
-bool_t delayRead( delay_t * delay );
-void delayWrite( delay_t * delay, tick_t duration );
-void periodicBlinkInit(delay_t *delays,duty_cycle * duties, size_t numLed);
-void periodicBlink(delay_t *delays,duty_cycle * duties, size_t numLed, uint32_t counter);
-
 
 /**
  * @brief Inits an array of leds to blink sequentially.
@@ -31,6 +25,7 @@ void periodicBlinkInit(delay_t *delays,duty_cycle * duties, size_t numLed){
 
 	for (uint8_t i = 0; i < numLed; i++){
 		tick_t duration = (tick_t)(duties[i].duration)*(duties[i].dutyCycle);
+		BSP_LED_Init(duties[i].led);
 		delayInit(&delays[i], duration);
 		uint32_t dutyCounter = duties[i].counter*2;
 		duties[i].counter = dutyCounter;
@@ -51,7 +46,7 @@ void periodicBlink(delay_t *delays,duty_cycle * duties, size_t numLed, uint32_t 
 		while (duties[i].counter>= counter && counter > 0){
 		if (delayRead(&delays[i])){
 
-				HAL_GPIO_TogglePin(GPIOD, duties[i].led);
+				BSP_LED_Toggle(duties[i].led);
 				duties[i].counter--;
 
 			}
