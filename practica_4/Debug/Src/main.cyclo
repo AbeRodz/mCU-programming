@@ -1,0 +1,8 @@
+../Src/main.c:73:6:debounceFSM_init	1
+../Src/main.c:77:6:debounceFSM_update	9
+../Src/main.c:115:6:buttonPressed	1
+../Src/main.c:119:6:buttonReleased	1
+../Src/main.c:137:5:main	1
+../Src/main.c:196:6:SystemClock_Config	3
+../Src/main.c:238:13:MX_GPIO_Init	1
+../Src/main.c:269:6:Error_Handler	1
