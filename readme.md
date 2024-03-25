@@ -67,3 +67,68 @@ This new functionality required a couple of new functions, so the following were
 void periodicBlinkInit(delay_t *delays,duty_cycle * duties, size_t numLed); // for initiating every Led given an array
 void periodicBlink(delay_t *delays,duty_cycle * duties, size_t numLed, uint32_t counter); // Blinks every Led given an array
 ```
+
+### Project 4 (tested with NUCLEO board)
+***This project was tested on the NUCLEO board, check the directory /practica_4 to check it out***
+
+This project consists in the following:
+
+### Part 1
+1. Implement a debounce finite state machine that allows to read the state of the button within the board and generate events with this  :white_check_mark:
+
+### Part 2
+1. Implement a module inside the existing API folder from project 3, and create the .h and .c files for API_debounce, and copy the prototypes and implementations of part 1, afterwards implement a new function readKey() to read the internal private variable of the state inside the new module.  :white_check_mark:
+2. Implement a program that changes the blinking frequency of the LED from 100ms to 500 ms every time the button is pressed using everything implemented before in debounce and delay. :white_check_mark:
+
+**Check the file on ***practica_4/Drivers/API/*** to see the docs for every function.**
+
+
+Using the same way I declared an array of leds and their configuration for periodic blinking, I reused this logic and created a similar way:
+
+``` C
+
+duty_cycle cycles[3] = {
+		{500, 0.5, LED1}, // duration, dutyCycle, led
+		{100, 0.5, LED1},
+		{200, 0.5, LED1}
+};
+```
+This way the array contains the target LEDs and their configurations for duration a dutyCycle, we can use this to apply the new config every time an event is done, this required new functionality to integrate from both modules, delay and debounce for that the following function was added:
+
+
+``` C
+void push_to_change_freq(delay_t *delays, duty_cycle *cycles, size_t arrayLength); // given an event, it swaps the current delay with duty cycle given an LED on the LED array
+```
+
+The implementation is quite interesting:
+
+``` C
+void push_to_change_freq(delay_t *delays, duty_cycle *cycles, size_t arrayLength){
+	if ((delays == NULL) || (cycles == NULL)){
+		Error_Handler();
+	}
+    debounceFSM_update(); // button event listener 
+	bool_t currentState = readKey(); // button current state
+
+    if (currentState) {
+
+        duty_cycle temp = cycles[0]; // swapping current config for the next config
+        for (uint8_t i = 0; i < arrayLength - 1; i++) {
+            cycles[i] = cycles[i + 1];
+        }
+        cycles[arrayLength - 1] = temp;
+
+
+        for (size_t i = 0; i < arrayLength; i++) { // initiating new config
+        	tick_t duration = (tick_t)(cycles[i].duration)*(cycles[i].dutyCycle);
+            delayInit(&delays[i], duration );
+        }
+
+
+    }
+    blink(&delays[0], &cycles[0]); //blinks with new config
+
+}
+```
+
+The current implementation will work for multiple LEDS configured, but it hasn't been tested thoroughly. 
