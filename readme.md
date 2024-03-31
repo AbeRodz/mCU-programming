@@ -69,7 +69,7 @@ void periodicBlink(delay_t *delays,duty_cycle * duties, size_t numLed, uint32_t 
 ```
 
 ### Project 4 (tested with NUCLEO board)
-***This project was tested on the NUCLEO board, check the directory /practica_4 to check it out***
+***This project was tested on the NUCLEO board, check the directory /practica_4***
 
 This project consists in the following:
 
@@ -132,3 +132,25 @@ void push_to_change_freq(delay_t *delays, duty_cycle *cycles, size_t arrayLength
 ```
 
 The current implementation will work for multiple LEDS configured, but it hasn't been tested thoroughly. 
+
+
+### Project 5 (tested with NUCLEO board)
+***This project was tested on the NUCLEO board, check the directory /practica_5***
+
+This project consists in implementing UART via the VIRTUALCOM with the following instructions:
+
+### Part 1
+
+1. Implement the following prototypes :white_check_mark: : 
+:
+``` C
+bool_t uartInit();
+void uartSendString(uint8_t * pstring);
+void uartSendStringSize(uint8_t * pstring, uint16_t size);
+void uartReceiveStringSize(uint8_t * pstring, uint16_t size);
+```
+### Part 2
+1. Using the code from project 4, implement UART to denote a RISING EDGE and a FALLING EDGE of the finite state machine previously implemented.  :white_check_mark:
+
+
+
